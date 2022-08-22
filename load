@@ -1,0 +1,536 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScriptHub = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Topbar = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local close = Instance.new("TextButton")
+local min = Instance.new("TextButton")
+local Content = Instance.new("Frame")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local TemplateFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+
+--Properties:
+
+ScriptHub.Name = "ScriptHub"
+ScriptHub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScriptHub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScriptHub
+Frame.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Frame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.0464177616, 0, 0.0716934502, 0)
+Frame.Size = UDim2.new(0.906659961, 0, 0.855377018, 0)
+
+Topbar.Name = "Topbar"
+Topbar.Parent = Frame
+Topbar.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+Topbar.BorderSizePixel = 0
+Topbar.Size = UDim2.new(1, 0, 0.0549132936, 0)
+
+TextLabel.Parent = Topbar
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(-0.000556415122, 0, 0.0789473653, 0)
+TextLabel.Size = UDim2.new(0.119643852, 0, 0.815789461, 0)
+TextLabel.Font = Enum.Font.Nunito
+TextLabel.Text = "SCRIPT  HUB"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 40.000
+
+close.Name = "close"
+close.Parent = Topbar
+close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+close.BackgroundTransparency = 1.000
+close.Position = UDim2.new(0.978297174, 0, 0.078946963, 0)
+close.Size = UDim2.new(0, 39, 0, 37)
+close.Font = Enum.Font.Roboto
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(255, 0, 0)
+close.TextSize = 36.000
+close.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+
+min.Name = "min"
+min.Parent = Topbar
+min.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+min.BackgroundTransparency = 1.000
+min.Position = UDim2.new(0.956037879, 0, 0.078946963, 0)
+min.Size = UDim2.new(0, 39, 0, 37)
+min.Font = Enum.Font.Roboto
+min.Text = "-"
+min.TextColor3 = Color3.fromRGB(255, 255, 255)
+min.TextSize = 45.000
+min.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+
+Content.Name = "Content"
+Content.Parent = Frame
+Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Content.BackgroundTransparency = 1.000
+Content.Position = UDim2.new(-0.00055648305, 0, 0.0563583821, 0)
+Content.Size = UDim2.new(1.00106156, 0, 0.943641603, 0)
+
+ScrollingFrame.Parent = Content
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0.00778642949, 0, 0.024502296, 0)
+ScrollingFrame.Size = UDim2.new(0.93381536, 0, 0.96018374, 0)
+
+UIGridLayout.Parent = ScrollingFrame
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellPadding = UDim2.new(0.00999999978, 13, 0, 5)
+UIGridLayout.CellSize = UDim2.new(0.150000006, 0, 0.150000006, 0)
+
+TemplateFrame.Name = "TemplateFrame"
+TemplateFrame.Parent = game.StarterGui.ScriptHub.Frame.Content.ContentManager
+TemplateFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TemplateFrame.BorderSizePixel = 0
+TemplateFrame.Size = UDim2.new(0, 200, 0, 207)
+
+UICorner.Parent = TemplateFrame
+
+TextButton.Parent = TemplateFrame
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 102)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(-3.02934033e-08, 0, 0.740173519, 0)
+TextButton.Size = UDim2.new(0, 251, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Error"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 25.000
+TextButton.TextWrapped = true
+
+UICorner_2.CornerRadius = UDim.new(10000, 0)
+UICorner_2.Parent = TextButton
+
+TextLabel_2.Parent = TemplateFrame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.ClipsDescendants = true
+TextLabel_2.Position = UDim2.new(-3.02934033e-08, 0, -3.89453518e-08, 0)
+TextLabel_2.Size = UDim2.new(0, 251, 0, 135)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Script Here"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel_2.TextYAlignment = Enum.TextYAlignment.Top
+
+-- Module Scripts:
+
+local fake_module_scripts = {}
+
+do -- Frame.ScriptEngine
+	local script = Instance.new('ModuleScript', Frame)
+	script.Name = "ScriptEngine"
+	local function module_script()
+		local hub = {}
+		
+		local minimised = false
+		
+		
+		
+		hub.MenuAction = function(str)
+			if str == "Close" then
+				script.Parent:Destroy()
+			elseif str == "Minimise" then
+				minimised = not minimised
+				if minimised == true then
+					script.Parent.Topbar.min.Text = "☐"
+					script.Parent.BackgroundTransparency = 1
+					script.Parent.Content.Visible = false
+				else
+					script.Parent.Topbar.min.Text = "-"
+					script.Parent.BackgroundTransparency = 0
+					script.Parent.Content.Visible = true
+				end
+			end
+		end
+		
+		hub.print = function(str)
+			print("[ScriptHub]" .. str)
+		end
+		
+		hub.addscript = function(name,scriptdata)
+			local template = script.Parent.Content.ContentManager.TemplateFrame:Clone()
+			template.Parent = script.Parent.Content.ScrollingFrame
+			template.ScrName.Value = name
+			template.Script.Value = scriptdata
+		end
+		
+		hub.scrapescript = function(url)
+			hub.print("Loading script from website " .. url)
+			local x = require(script.Parent["HTML Module"]); 
+			
+			local http = game:GetService('HttpService'); 
+			
+		
+			return http:GetAsync(url)
+		end
+		--		local res = string.match(tweets, '>(.*)</')
+		
+		
+		hub.loadscript = function(scr)
+			loadstring(scr)
+		end
+		hub.scrapewebsite = function(url)
+			hub.print("scrape " .. url)
+			
+			local http = game:GetService('HttpService'); 
+			local x = require(script.Parent["HTML Module"]); 
+			local data = http:GetAsync(url); 
+			hub.print("grabbing data")
+			if data~=nil then 
+				local requestedClass = 'col-sm-6 col-xs-12' --html class of a tweet, found with inspect element
+				local tweets = x:getElementsByClassName(data, requestedClass, 100)--third parameter is 3, because I don't want my table to be longer than 3 rows. 
+				for i,v in pairs(tweets) do
+					hub.print(i..': '..v)
+					local readdata = string.split(v,'"')
+					for a,b in pairs(readdata) do
+						hub.print("["..a.."]".. b)
+					end		
+					hub.addscript(readdata[14],hub.scrapescript(readdata[8].."?reveal=2"))
+				end			
+			else
+				hub.print("Failed scrape")
+			end
+		end
+		
+		hub.load = function()
+			hub.print("Injecting to ScriptEngine")
+			script.Parent.Topbar.Dragable.Value = true
+		end
+		
+		return hub
+		
+	end
+	fake_module_scripts[script] = module_script
+end
+do -- Frame.HTML Module
+	local script = Instance.new('ModuleScript', Frame)
+	script.Name = "HTML Module"
+	local function module_script()
+		--MADE BY GAGOU_BLOXXER
+		
+		--if you use this module in your game, would be nice if you credited me :)
+		
+		--/!\I DO NOT TAKE ANY RESPONSIBILITY IN THE SCRIPT. USE IT, RESPECTING ROBLOX ToS, YOU'RE STILL RESPONSIBLE OF WHAT YOU'RE DOING WITH MY CODE.
+		--Will work most of the times, this code can make errors in precise cases, when multiple tags are inside other tags of the same type. 
+		--Do not forget to activate HTML requests.
+		
+		--[[PLEASE READ: 
+		  String manipulation isn't my strong point in lua. This script may seem deprecated in few months, as new functions may arrive.
+		  If I'm not using an in-built function that I should use, or something is really wrong in my code, please contact me, and tell me it'll probably teach me something!
+		
+			This module should be used, if you don't find APIs or JSON Data for a precise thing, and you only have the HTML page for use.
+		]]
+		--[[AVAILABLE FUNCTIONS:
+		 module:getElementsByClassName(PageDocument, classRequested, maxSize of the elements table)
+				>> returns a table of length [third paramter], including all the n'th elements having the requested class. (Just like the js DOM one)
+		
+		 module:getElementById(PageDocument, idRequested)
+		  >> returns the FIRST element with the matching id as the id requested. 
+		
+		 module:getElementsByTagName(PageDocument, classRequested, maxSize of the elements table)
+		    >> returns a table of length [third parameter] including all elements having the matchin tag name. Tag names are the ones located between < and > in HTML. 
+		]]
+		
+		setts = {
+		  each_deb = 4563456; --increase this number and it'll go faster. -> More laggy
+		};
+		
+		local tags = {
+		  'a', 'p',
+		  'h1', 'h2', 'h3', 'ul', 'li', 
+		  'div', 
+		  'span', 'body',
+		  'label', 'input',
+		  'button', 'center', 'header', 'footer'
+		} --html tags you want to detect.
+		
+		
+		--used functions in the module
+		--do not touch anything below, unless you know what you are doing.
+		
+		local deb = 0; 
+		function cut(d,n,w)
+		  return d:sub(n,n+#(w)-1); 
+		end
+		
+		function get_value(d, q)
+		  local class = ""; 
+		  local s1,s2,v = false,false,0;
+		  for i = q, #d do
+		    if d:sub(i,i)=='=' then s1 = true; end 
+		    if d:sub(i,i)=='"' and  s1 and not s2 then s2 = true; v=i+1 end 
+		    if s1==true and s2==true then 
+		      if d:sub(i,i)=='"' and i-1>v then 
+		        class = d:sub(v,i-1);
+		        break
+		      end
+		    end    
+		  end
+		  return class 
+		end
+		
+		function get_whole_Element(d,q)
+		  local s,e = 0,0; 
+		  local tag = ''; 
+		  for i = q, 1, -1 do
+		    if d:sub(i,i)=='<' then 
+		      s = i;
+		      for j,k in pairs(tags) do
+		        if d:sub(i,i+#k) == '<'..k then 
+		          tag = k;
+		          break 
+		        end
+		      end 
+		      if tag=='' then return 'error in function' end 
+		      break
+		    end
+		  end
+		  for i = q-5, #d do
+		    if d:sub(i,i+#tag+2)=='</'..tag..'>' then 
+		      e = i+#tag+2; 
+		      break
+		    end
+		  end
+		  return d:sub(s,e); 
+		end
+		
+		function contains(wc, c)
+			if wc==c then return true end 
+		  for i = 0, #wc do
+		    local n = i+#c-1; 
+		    if wc:sub(i, n) == c then 
+		      if wc:sub(n+1,n+1) == '' or wc:sub(n+1,n+1) == ' ' then 
+		        if wc:sub(i-1,i-1)==' ' or wc:sub(i-1,i-1)=='' then
+		          return true
+		        end
+		      end
+		    end
+		  end
+		  return false 
+		end
+		
+		function cut_to_body(d)
+			for i = 1, #d do
+				if cut(d,i,'<body>')=='<body>' then 
+					d=d:sub(i,#d); 
+					break
+				end
+			end
+			for i = #d,1,-1 do
+				if cut(d,i,'</body>')=='</body>' then 
+					d=d:sub(1, i+#('</body>'));
+				end
+			end
+			return d
+		end
+		
+		
+		 
+		
+		
+		--module
+		dom_module = {}; 
+		
+		function dom_module:getElementsByClassName(document,class,n)
+		  local elements = {}; 
+			document=cut_to_body(document)
+		  for i = 1, #document do 
+		    if cut(document,i,'class')=='class' and document:sub(i-1,i-1)==' ' then 
+		      local new_class = get_value(document, i+#("class")-3); 
+		      if #new_class>0 then 
+		        if contains(new_class,class) == true then 
+							local a = get_whole_Element(document,i)
+		          table.insert(elements,a); 
+		          if n~=nil and typeof(n)=='number' then 
+		            if #elements>=n then break end 
+		          end
+		        end
+		      end
+		    end
+		    deb=deb+1; 
+		    if deb%setts.each_deb==0 then wait() deb=0 end 
+		  end
+		  return elements; 
+		end
+		
+		function dom_module:getElementById(document,Id)
+		  document=cut_to_body(document)
+			for i = 1, #document do 
+		    if cut(document,i,'id')=='id' and document:sub(i-1,i-1)==' ' then 
+					local new_id = get_value(document, i+#('id')-3);
+		      if #new_id>0 then 
+		        if contains(new_id, Id) == true then 
+		          return get_whole_Element(document,i); 
+		        end
+		      end
+				end
+		    deb=deb+1; 
+		    if deb%setts.each_deb==0 then wait() deb=0 end 
+			end
+		end
+		
+		function dom_module:getElementsByTagName(document,tagName,n)
+			local found = false;
+			for i,v in pairs(tags) do
+				if v==tagName then
+					found = true; 
+				end
+			end
+			if not found then warn"tag nane hasn't been registered" end 
+		  document=cut_to_body(document)
+		  local elements = {}; 
+		
+		  for i = 1, #document do 
+		    if cut(document,i,'<'..tagName..'>')=='<'..tagName..'>' then 
+		      local el = get_whole_Element(document,i); 
+		      if el~=nil then 
+		        table.insert(elements,el); 
+		      end
+		      if n~=nil and #elements>=n then 
+		        break 
+		      end
+		    end
+		  end
+		  return elements 
+		end
+		
+		return dom_module
+		
+		--MADE BY GAGOUBLOXXER
+	end
+	fake_module_scripts[script] = module_script
+end
+
+
+-- Scripts:
+
+local function DQGMG_fake_script() -- Topbar.MenuManager 
+	local script = Instance.new('LocalScript', Topbar)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local UserInputService = game:GetService("UserInputService")
+	local ScriptEngine = require(script.Parent.Parent.ScriptEngine)
+	
+	script.Parent.min.MouseButton1Down:Connect(function()
+		ScriptEngine.MenuAction("Minimise")
+	end)
+	script.Parent.close.MouseButton1Down:Connect(function()
+		ScriptEngine.MenuAction("Close")
+	end)
+	local gui = script.Parent.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		if script.Parent.Dragable.Value == true then
+			gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+	end
+	
+	script.Parent.Dragable.Changed:Connect(function(val)
+		if val == false then
+			script.Parent.Parent.Position = UDim2.new(0.046, 0,0.072, 0)
+		end
+	end)
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+	
+end
+coroutine.wrap(DQGMG_fake_script)()
+local function PXHR_fake_script() -- Content.ContentManager 
+	local script = Instance.new('LocalScript', Content)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local engine = require(script.Parent.Parent.ScriptEngine)
+	
+	engine.scrapewebsite("https://rbx-scripts.com")
+end
+coroutine.wrap(PXHR_fake_script)()
+local function WJSVAQ_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	script.Parent.Text = script.Parent.Parent.ScrName.Value
+	script.Parent.Parent.TextLabel.Text = script.Parent.Parent.Script.Value
+	
+	script.Parent.Parent.ScrName.Changed:Connect(function(val)
+		script.Parent.Text = val
+	end)
+	script.Parent.Parent.Script.Changed:Connect(function(val)
+		script.Parent.Parent.TextLabel.Text = val
+	end)
+	script.Parent.MouseButton1Down:Connect(function()
+		require(script.Parent.Parent.Parent.Parent.Parent.ScriptEngine).loadscript(script.Parent.Parent.Script.Value)
+	end)
+	
+	script.Parent.MouseEnter:Connect(function()
+		script.Parent.Text = "Load"
+	end)
+	script.Parent.MouseLeave:Connect(function()
+		script.Parent.Text = script.Parent.Parent.ScrName.Value
+	end)
+end
+coroutine.wrap(WJSVAQ_fake_script)()
